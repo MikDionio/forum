@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+    {% if latest_post_list %}
+        <ul>
+            {% for post in latest_post_list %}
+                <li><a href="{% url 'forum:post' post.id %}">{{post.post_title}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No posts here :(</p>
+    {% endif %}
+{% endblock %}
