@@ -1,6 +1,7 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
+    <a href="{% url 'forum:createPost' %}">Create a post</a>
     {% if latest_post_list %}
         <ul>
             {% for post in latest_post_list %}

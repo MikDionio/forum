@@ -1,1 +1,12 @@
 {% extends 'home/base.html' %}
+
+{% block content %}
+
+    <h3>Create your post</h3>
+    <form action="{% url 'forum:createPost' %}" method="post">
+        {% csrf_token %}
+        {{post_form.as_p}}
+        <button type='Submit'/>Create</button>
+    </form>
+
+{% endblock %}
