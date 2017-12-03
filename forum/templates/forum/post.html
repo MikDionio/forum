@@ -5,16 +5,17 @@
 
     <p>{{post.post_text}}</p>
 
-    {% for comment in comments %}
-        <h6>{{comment.comment_text}}</h6> <p>-{{comment.comment_author}}</p>
-    {% endfor %}
-
     {% if user.is_authenticated %}
         <form action="{% url 'forum:post' post.id %}" method ="post">
             {%csrf_token%}
             {{comment_form}}
         </form>
     {% else %}
+    
+    {% for comment in comments %}
+        <h6>{{comment.comment_text}}</h6> <p>-{{comment.comment_author}}</p>
+    {% endfor %}
+
         <p>Log-in to comment</p>
     {% endif %}
 {% endblock %}
