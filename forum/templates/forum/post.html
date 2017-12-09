@@ -13,7 +13,7 @@
             {{comment_form}}
         </form>
     {% else %}
-        <p>Log-in to comment</p>
+        <p><a href="{% url 'home:login' %}">Log-in</a> or <a href="{% url 'home:signup'%}">Create an account</a> to comment</p>
     {% endif %}
 
     {% for comment in comments %}
